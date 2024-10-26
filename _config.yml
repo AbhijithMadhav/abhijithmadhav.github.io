@@ -78,6 +78,11 @@ footer:
       icon: "fab fa-fw fa-github"
       url: "https://github.com/abhijithmadhav"
 
+collections:
+  learnings:
+    output: true
+    permalink: /:collection/:path/
+    
 defaults:
   # _posts
   - scope:
@@ -97,6 +102,15 @@ defaults:
     values:
       layout: single
       author_profile: true
+  # _portfolio
+  - scope:
+      path: ""
+      type: learnings
+    values:
+      layout: single
+      author_profile: false
+      share: true
+
 
 category_archive:
   type: liquid

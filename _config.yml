@@ -108,6 +108,8 @@ defaults:
       layout: single
       author_profile: false
       toc: true
+      sidebar:
+        nav: "notes-toc"
 
   # experiences
   - scope:

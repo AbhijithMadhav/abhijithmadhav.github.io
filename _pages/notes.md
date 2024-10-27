@@ -1,0 +1,4 @@
+---
+permalink: /notes/
+toc: false
+---

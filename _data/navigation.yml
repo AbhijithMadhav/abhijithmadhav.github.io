@@ -2,7 +2,7 @@ main:
   - title: "About"
     url: /about/
   - title: "Notes"
-    url: /learnings/
+    url: /notes/
   - title: "Posts"
     url: /posts/
   - title: "Categories"
@@ -12,6 +12,7 @@ main:
 
 notes-toc:
   - title: Experiences
+    url: /experiences/
     children:
       - title: Apache Kafka
         url: /experiences/kafka/
@@ -24,6 +25,7 @@ notes-toc:
         url: /experiences/aws-athena/
 
   - title: Real world systems
+    url: /system-design/
     children:
       - title: Chat Application Or Messaging Service
         url: /system-design/chat-system/
@@ -85,6 +87,7 @@ notes-toc:
         url: /distributed-systems/unique-id-generator
 
   - title: Misc
+    url: /misc/
     children:
       - title: B-trees
         url: /misc/b-tree

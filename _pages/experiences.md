@@ -1,5 +1,5 @@
 ---
-title: Notes based on my working experience
+title: Notes based on experience
 layout: collection
 permalink: /experiences/
 collection: experiences

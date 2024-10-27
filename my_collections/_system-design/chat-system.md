@@ -1,5 +1,12 @@
 ---
 title: Chat messaging system
+categories:
+  - real-world-system
+tags:
+  - ws
+  - consistent-hashing
+  - cassandra
+  - thundering-herd
 ---
 
 A ‘Chat messaging system’ is something like WhatsApp which enables users to communicate. The communication can be via text messages, photos, videos, audio calls or video calls. Focus here is on communication via text messages
@@ -23,7 +30,7 @@ A ‘Chat messaging system’ is something like WhatsApp which enables users to 
 ## High level design
 ![chat service](../../assets/images/chat-service-1.svg)
 
-### Crux : Chat service
+### Crux: Chat service
 
 * Use a web-service(chat service) between two clients(sender and receiver) which will route the messages
 * Use websockets for communication between client and chat service

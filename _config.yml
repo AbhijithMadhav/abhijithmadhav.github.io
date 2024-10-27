@@ -8,6 +8,8 @@ github_username: abhijithmadhav
 minimal_mistakes_skin: default
 search: true
 
+repository: abhijithmadhav/abhijithmadhav.github.io
+
 # Build settings
 markdown: kramdown
 remote_theme: mmistakes/minimal-mistakes

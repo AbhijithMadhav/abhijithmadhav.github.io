@@ -10,3 +10,90 @@ main:
   - title: "Tags"
     url: /tags/
 
+notes-toc:
+  - title: Experiences
+    children:
+      - title: Apache Kafka
+        url: /experiences/kafka/
+      - title: Kafka Streams
+      - title: Mongo DB
+      - title: Oracle DB
+      - title: Spring/Spring Boot
+      - title: Java
+      - title: AWS Athena
+        url: /experiences/aws-athena/
+
+  - title: Real world systems
+    children:
+      - title: Chat Application Or Messaging Service
+        url: /system-design/chat-system/
+      - title: Chess.com
+        url: /system-design/chess.com/
+      - title: Cloud Storage Service
+        url: /system-design/cloud-storage-service/
+      - title: Distributed Cache
+        url: /system-design/distributed-cache/
+      - title: Notification Service
+        url: /system-design/notification-service/
+      - title: Post Feed
+        url: /system-design/post-feed/
+      - title: Rate Limiter
+        url: /system-design/rate-limiter/
+      - title: Ride Hailing
+        url: /system-design/ride-hailing/
+      - title: Tagging System
+        url: /system-design/tagging-system/
+      - title: Top K Leaderboard
+        url: /system-design/top-k/
+      - title: URL Shortening System
+        url: /system-design/url-shortening/
+      - title: Web Crawler
+        url: /system-design/web-crawler/
+
+  - title: Distributed Systems
+    url: /distributed-systems/
+    children:
+      - title: Caching
+        url: /distributed-systems/caching
+      - title: Cluster Management
+        url: /distributed-systems/cluster-management
+      - title: Consistent Hashing based Routing
+        url: /distributed-systems/consistent-hashing-router
+      - title: Cloud Costs
+        url: /distributed-systems/cost
+      - title: Database Comparison
+        url: ../../assets/images/Databases.png
+      - title: Distributed Systems
+        url: ../../assets/images/distributed-systems.svg
+      - title: Distributed Locks
+        url: /distributed-systems/distributed-locks
+      - title: Fault Tolerance
+        url: /distributed-systems/fault-tolerance
+      - title: Load Balancer
+        url: /distributed-systems/load-balancer
+      - title: Messaging
+        url: /distributed-systems/messaging
+      - title: Replication
+        url: ../../assets/images/Replication.png
+      - title: Service Discovery
+        url: /distributed-systems/service-discovery
+      - title: Sharding
+        url: /distributed-systems/sharding
+      - title: Thundering Herds
+        url: /distributed-systems/thundering-herds
+      - title: Unique id Generator
+        url: /distributed-systems/unique-id-generator
+
+  - title: Misc
+    children:
+      - title: B-trees
+        url: /misc/b-tree
+      - title: Geospatial Index
+        url: /misc/geospatial-index/
+      - title: LSM Trees
+        url: /misc/lsm-tree/
+      - title: Transaction Isolation levels
+        url: ../../assets/images/transaction-isolation-levels.png
+
+  - title: Operating System
+    url: /operating-system

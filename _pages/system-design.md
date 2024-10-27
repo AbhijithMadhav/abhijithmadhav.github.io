@@ -6,5 +6,3 @@ collection: system-design
 classes: wide
 author_profile: false
 ---
-
-TODO: TOC

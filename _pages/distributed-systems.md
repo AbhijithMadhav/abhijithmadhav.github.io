@@ -1,5 +1,5 @@
 ---
-title: Building blocks of distributed systems
+title: Distributed systems
 layout: collection
 permalink: /distributed-systems/
 collection: distributed-systems
@@ -7,4 +7,4 @@ classes: wide
 author_profile: false
 ---
 
-TODO: TOC
+![Why?](../assets/images/distributed-systems.svg)

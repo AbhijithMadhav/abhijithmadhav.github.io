@@ -1,4 +1,6 @@
-# Geospatial indexes
+---
+title: Geospatial indexes
+---
 
 Location information consists of two dimensions. 
 Traditional hash indexing on either on of the attributes does not uniquely represent the location information.
@@ -21,7 +23,7 @@ Illustration
 5. and so on
 
 A portion of the geo index can be visualized as 
-```json
+```
 {
   "babcdabcdda" : [list of coordinates],
   "babcdabcddb" : [list of coordinates],

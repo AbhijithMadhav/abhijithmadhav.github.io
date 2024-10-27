@@ -166,9 +166,6 @@ defaults:
       sidebar:
         nav: "notes-toc"
 
-
-
-
 category_archive:
   type: liquid
   path: /categories/

@@ -1,0 +1,519 @@
+%META:TOPICINFO{author="AbhijithMadhav" date="1302617676" format="1.1" version="1.2"}%
+%META:TOPICPARENT{name="OperatingSystems"}%
+---+++ To inspect the processes communicating using shared memory segments in a linux system
+---++ Shell script
+<verbatim>
+for i in `ipcs -m -t | grep "Not set" | cut -f1 -d" "`
+do
+        echo "# ipcs -m -i $i"
+        ipcs -m -i $i
+        lpid=`ipcs -m -i $i | grep ^bytes | sed 's/^bytes=[0-9]*[ \t]*lpid=\([0-9]*\).*cpid=\([0-9]*\)[ \t]*.*$/\1/g'`
+        cpid=`ipcs -m -i $i | grep ^bytes | sed 's/^bytes=[0-9]*[ \t]*lpid=\([0-9]*\).*cpid=\([0-9]*\)[ \t]*.*$/\2/g'`
+        echo Creator:
+        ps $cpid
+        echo Last Attacher:
+        ps $lpid
+        echo
+        echo ----------------------------------------------------------------------------------------------------------------------------------------
+        echo
+done
+</verbatim>
+
+---++ Sample output
+<verbatim>
+#ipcs -m -i 65538
+
+Shared memory Segment shmid=65538
+uid=1000	gid=1000	cuid=1000	cgid=1000
+mode=01600	access_perms=0600
+bytes=393216	lpid=1064	cpid=1265	nattch=2
+att_time=Tue Apr 12 06:37:36 2011  
+det_time=Not set                   
+change_time=Tue Apr 12 06:37:36 2011  
+
+Creator:
+  PID TTY      STAT   TIME COMMAND
+ 1265 ?        S      0:34 python /usr/share/ibus/ui/gtk/main.py
+Last Accesser:
+  PID TTY      STAT   TIME COMMAND
+ 1064 tty8     Ss+   17:53 /usr/bin/X :1 -br -verbose -auth /var/run/gdm/auth-for-gdm-aDVJgc/database -nolisten tcp
+
+----------------------------------------------------------------------------------------------------
+
+#ipcs -m -i 98307
+
+Shared memory Segment shmid=98307
+uid=1000	gid=1000	cuid=1000	cgid=1000
+mode=01600	access_perms=0600
+bytes=393216	lpid=1064	cpid=1339	nattch=2
+att_time=Tue Apr 12 06:37:37 2011  
+det_time=Not set                   
+change_time=Tue Apr 12 06:37:37 2011  
+
+Creator:
+  PID TTY      STAT   TIME COMMAND
+ 1339 ?        Sl     0:04 nm-applet --sm-disable
+Last Accesser:
+  PID TTY      STAT   TIME COMMAND
+ 1064 tty8     Ss+   17:53 /usr/bin/X :1 -br -verbose -auth /var/run/gdm/auth-for-gdm-aDVJgc/database -nolisten tcp
+
+----------------------------------------------------------------------------------------------------
+
+#ipcs -m -i 262152
+
+Shared memory Segment shmid=262152
+uid=1000	gid=1000	cuid=1000	cgid=1000
+mode=01600	access_perms=0600
+bytes=393216	lpid=1064	cpid=1724	nattch=2
+att_time=Tue Apr 12 06:37:41 2011  
+det_time=Not set                   
+change_time=Tue Apr 12 06:37:41 2011  
+
+Creator:
+  PID TTY      STAT   TIME COMMAND
+ 1724 ?        Sl     1:14 /usr/lib/gnome-panel/wnck-applet --oaf-activate-iid=OAFIID:GNOME_Wncklet_Factory --oaf-ior-fd=22
+Last Accesser:
+  PID TTY      STAT   TIME COMMAND
+ 1064 tty8     Ss+   17:53 /usr/bin/X :1 -br -verbose -auth /var/run/gdm/auth-for-gdm-aDVJgc/database -nolisten tcp
+
+----------------------------------------------------------------------------------------------------
+
+#ipcs -m -i 327690
+
+Shared memory Segment shmid=327690
+uid=1000	gid=1000	cuid=1000	cgid=1000
+mode=01600	access_perms=0600
+bytes=393216	lpid=1064	cpid=1841	nattch=2
+att_time=Tue Apr 12 06:37:42 2011  
+det_time=Not set                   
+change_time=Tue Apr 12 06:37:42 2011  
+
+Creator:
+  PID TTY      STAT   TIME COMMAND
+ 1841 ?        Sl     0:00 /usr/lib/indicator-applet/indicator-applet-session --oaf-activate-iid=OAFIID:GNOME_FastUserSwitchApplet_Factory --oaf-ior-fd=55
+Last Accesser:
+  PID TTY      STAT   TIME COMMAND
+ 1064 tty8     Ss+   17:53 /usr/bin/X :1 -br -verbose -auth /var/run/gdm/auth-for-gdm-aDVJgc/database -nolisten tcp
+
+----------------------------------------------------------------------------------------------------
+
+#ipcs -m -i 360459
+
+Shared memory Segment shmid=360459
+uid=1000	gid=1000	cuid=1000	cgid=1000
+mode=01600	access_perms=0600
+bytes=393216	lpid=1064	cpid=1835	nattch=2
+att_time=Tue Apr 12 06:37:43 2011  
+det_time=Not set                   
+change_time=Tue Apr 12 06:37:43 2011  
+
+Creator:
+  PID TTY      STAT   TIME COMMAND
+ 1835 ?        Sl     0:00 /usr/lib/gnome-applets/trashapplet --oaf-activate-iid=OAFIID:GNOME_Panel_TrashApplet_Factory --oaf-ior-fd=43
+Last Accesser:
+  PID TTY      STAT   TIME COMMAND
+ 1064 tty8     Ss+   17:53 /usr/bin/X :1 -br -verbose -auth /var/run/gdm/auth-for-gdm-aDVJgc/database -nolisten tcp
+
+----------------------------------------------------------------------------------------------------
+
+#ipcs -m -i 425997
+
+Shared memory Segment shmid=425997
+uid=1000	gid=1000	cuid=1000	cgid=1000
+mode=01600	access_perms=0600
+bytes=393216	lpid=1064	cpid=1869	nattch=2
+att_time=Tue Apr 12 06:37:46 2011  
+det_time=Not set                   
+change_time=Tue Apr 12 06:37:46 2011  
+
+Creator:
+  PID TTY      STAT   TIME COMMAND
+ 1869 ?        Sl     0:02 mono /usr/lib/tomboy/Tomboy.exe --sm-disable --panel-applet --oaf-activate-iid=OAFIID:TomboyApplet_Factory --oaf-ior-fd=37
+Last Accesser:
+  PID TTY      STAT   TIME COMMAND
+ 1064 tty8     Ss+   17:53 /usr/bin/X :1 -br -verbose -auth /var/run/gdm/auth-for-gdm-aDVJgc/database -nolisten tcp
+
+----------------------------------------------------------------------------------------------------
+
+#ipcs -m -i 491535
+
+Shared memory Segment shmid=491535
+uid=1000	gid=1000	cuid=1000	cgid=1000
+mode=01600	access_perms=0600
+bytes=393216	lpid=1064	cpid=1845	nattch=2
+att_time=Tue Apr 12 06:37:52 2011  
+det_time=Not set                   
+change_time=Tue Apr 12 06:37:52 2011  
+
+Creator:
+  PID TTY      STAT   TIME COMMAND
+ 1845 ?        Sl     1:52 /usr/lib/netspeed/netspeed_applet2 --oaf-activate-iid=OAFIID:GNOME_NetspeedApplet_Factory --oaf-ior-fd=79
+Last Accesser:
+  PID TTY      STAT   TIME COMMAND
+ 1064 tty8     Ss+   17:53 /usr/bin/X :1 -br -verbose -auth /var/run/gdm/auth-for-gdm-aDVJgc/database -nolisten tcp
+
+----------------------------------------------------------------------------------------------------
+
+#ipcs -m -i 524304
+
+Shared memory Segment shmid=524304
+uid=1000	gid=1000	cuid=1000	cgid=1000
+mode=01600	access_perms=0600
+bytes=393216	lpid=1064	cpid=1846	nattch=2
+att_time=Tue Apr 12 06:37:52 2011  
+det_time=Not set                   
+change_time=Tue Apr 12 06:37:52 2011  
+
+Creator:
+  PID TTY      STAT   TIME COMMAND
+ 1846 ?        Sl     0:13 /usr/lib/gnome-applets/cpufreq-applet --oaf-activate-iid=OAFIID:GNOME_CPUFreqApplet_Factory --oaf-ior-fd=73
+Last Accesser:
+  PID TTY      STAT   TIME COMMAND
+ 1064 tty8     Ss+   17:53 /usr/bin/X :1 -br -verbose -auth /var/run/gdm/auth-for-gdm-aDVJgc/database -nolisten tcp
+
+----------------------------------------------------------------------------------------------------
+
+#ipcs -m -i 589842
+
+Shared memory Segment shmid=589842
+uid=1000	gid=1000	cuid=1000	cgid=1000
+mode=01600	access_perms=0600
+bytes=393216	lpid=1064	cpid=1839	nattch=2
+att_time=Tue Apr 12 06:37:53 2011  
+det_time=Not set                   
+change_time=Tue Apr 12 06:37:53 2011  
+
+Creator:
+  PID TTY      STAT   TIME COMMAND
+ 1839 ?        Sl     0:07 /usr/lib/indicator-applet/indicator-applet --oaf-activate-iid=OAFIID:GNOME_IndicatorApplet_Factory --oaf-ior-fd=49
+Last Accesser:
+  PID TTY      STAT   TIME COMMAND
+ 1064 tty8     Ss+   17:53 /usr/bin/X :1 -br -verbose -auth /var/run/gdm/auth-for-gdm-aDVJgc/database -nolisten tcp
+
+----------------------------------------------------------------------------------------------------
+
+#ipcs -m -i 622611
+
+Shared memory Segment shmid=622611
+uid=1000	gid=1000	cuid=1000	cgid=1000
+mode=01600	access_perms=0600
+bytes=393216	lpid=1064	cpid=1844	nattch=2
+att_time=Tue Apr 12 06:37:53 2011  
+det_time=Not set                   
+change_time=Tue Apr 12 06:37:53 2011  
+
+Creator:
+  PID TTY      STAT   TIME COMMAND
+ 1844 ?        Sl     1:43 /usr/lib/gnome-panel/sensors-applet --oaf-activate-iid=OAFIID:SensorsApplet_Factory --oaf-ior-fd=67
+Last Accesser:
+  PID TTY      STAT   TIME COMMAND
+ 1064 tty8     Ss+   17:53 /usr/bin/X :1 -br -verbose -auth /var/run/gdm/auth-for-gdm-aDVJgc/database -nolisten tcp
+
+----------------------------------------------------------------------------------------------------
+
+#ipcs -m -i 786455
+
+Shared memory Segment shmid=786455
+uid=1000	gid=1000	cuid=1000	cgid=1000
+mode=01600	access_perms=0600
+bytes=393216	lpid=1064	cpid=1322	nattch=2
+att_time=Tue Apr 12 06:47:15 2011  
+det_time=Not set                   
+change_time=Tue Apr 12 06:47:15 2011  
+
+Creator:
+  PID TTY      STAT   TIME COMMAND
+ 1322 ?        Sl     0:57 metacity
+Last Accesser:
+  PID TTY      STAT   TIME COMMAND
+ 1064 tty8     Ss+   17:53 /usr/bin/X :1 -br -verbose -auth /var/run/gdm/auth-for-gdm-aDVJgc/database -nolisten tcp
+
+----------------------------------------------------------------------------------------------------
+
+#ipcs -m -i 6783000
+
+Shared memory Segment shmid=6783000
+uid=1000	gid=1000	cuid=1000	cgid=1000
+mode=01600	access_perms=0600
+bytes=393216	lpid=1064	cpid=1322	nattch=2
+att_time=Tue Apr 12 16:24:14 2011  
+det_time=Not set                   
+change_time=Tue Apr 12 16:24:14 2011  
+
+Creator:
+  PID TTY      STAT   TIME COMMAND
+ 1322 ?        Sl     0:57 metacity
+Last Accesser:
+  PID TTY      STAT   TIME COMMAND
+ 1064 tty8     Ss+   17:53 /usr/bin/X :1 -br -verbose -auth /var/run/gdm/auth-for-gdm-aDVJgc/database -nolisten tcp
+
+----------------------------------------------------------------------------------------------------
+
+#ipcs -m -i 1671193
+
+Shared memory Segment shmid=1671193
+uid=1000	gid=1000	cuid=1000	cgid=1000
+mode=01600	access_perms=0600
+bytes=393216	lpid=1064	cpid=1835	nattch=2
+att_time=Tue Apr 12 08:45:13 2011  
+det_time=Not set                   
+change_time=Tue Apr 12 08:45:13 2011  
+
+Creator:
+  PID TTY      STAT   TIME COMMAND
+ 1835 ?        Sl     0:00 /usr/lib/gnome-applets/trashapplet --oaf-activate-iid=OAFIID:GNOME_Panel_TrashApplet_Factory --oaf-ior-fd=43
+Last Accesser:
+  PID TTY      STAT   TIME COMMAND
+ 1064 tty8     Ss+   17:53 /usr/bin/X :1 -br -verbose -auth /var/run/gdm/auth-for-gdm-aDVJgc/database -nolisten tcp
+
+----------------------------------------------------------------------------------------------------
+
+#ipcs -m -i 2654235
+
+Shared memory Segment shmid=2654235
+uid=1000	gid=1000	cuid=1000	cgid=1000
+mode=01600	access_perms=0600
+bytes=393216	lpid=1064	cpid=1354	nattch=2
+att_time=Tue Apr 12 10:28:42 2011  
+det_time=Not set                   
+change_time=Tue Apr 12 10:28:42 2011  
+
+Creator:
+  PID TTY      STAT   TIME COMMAND
+ 1354 ?        Sl     0:00 /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
+Last Accesser:
+  PID TTY      STAT   TIME COMMAND
+ 1064 tty8     Ss+   17:53 /usr/bin/X :1 -br -verbose -auth /var/run/gdm/auth-for-gdm-aDVJgc/database -nolisten tcp
+
+----------------------------------------------------------------------------------------------------
+
+#ipcs -m -i 6815772
+
+Shared memory Segment shmid=6815772
+uid=1000	gid=1000	cuid=1000	cgid=1000
+mode=01600	access_perms=0600
+bytes=393216	lpid=1064	cpid=2204	nattch=2
+att_time=Tue Apr 12 16:24:14 2011  
+det_time=Not set                   
+change_time=Tue Apr 12 16:24:14 2011  
+
+Creator:
+  PID TTY      STAT   TIME COMMAND
+ 2204 ?        Sl     0:08 /usr/lib/notify-osd/notify-osd
+Last Accesser:
+  PID TTY      STAT   TIME COMMAND
+ 1064 tty8     Ss+   17:53 /usr/bin/X :1 -br -verbose -auth /var/run/gdm/auth-for-gdm-aDVJgc/database -nolisten tcp
+
+----------------------------------------------------------------------------------------------------
+
+#ipcs -m -i 5832734
+
+Shared memory Segment shmid=5832734
+uid=1000	gid=1000	cuid=1000	cgid=1000
+mode=01600	access_perms=0600
+bytes=393216	lpid=1064	cpid=7430	nattch=2
+att_time=Tue Apr 12 15:10:44 2011  
+det_time=Not set                   
+change_time=Tue Apr 12 15:10:44 2011  
+
+Creator:
+  PID TTY      STAT   TIME COMMAND
+ 7430 ?        Sl     3:18 transmission-gtk
+Last Accesser:
+  PID TTY      STAT   TIME COMMAND
+ 1064 tty8     Ss+   17:53 /usr/bin/X :1 -br -verbose -auth /var/run/gdm/auth-for-gdm-aDVJgc/database -nolisten tcp
+
+----------------------------------------------------------------------------------------------------
+
+#ipcs -m -i 5865503
+
+Shared memory Segment shmid=5865503
+uid=1000	gid=1000	cuid=1000	cgid=1000
+mode=01600	access_perms=0600
+bytes=393216	lpid=1064	cpid=7430	nattch=2
+att_time=Tue Apr 12 15:10:44 2011  
+det_time=Not set                   
+change_time=Tue Apr 12 15:10:44 2011  
+
+Creator:
+  PID TTY      STAT   TIME COMMAND
+ 7430 ?        Sl     3:18 transmission-gtk
+Last Accesser:
+  PID TTY      STAT   TIME COMMAND
+ 1064 tty8     Ss+   17:53 /usr/bin/X :1 -br -verbose -auth /var/run/gdm/auth-for-gdm-aDVJgc/database -nolisten tcp
+
+----------------------------------------------------------------------------------------------------
+
+#ipcs -m -i 6848544
+
+Shared memory Segment shmid=6848544
+uid=1000	gid=1000	cuid=1000	cgid=1000
+mode=01600	access_perms=0600
+bytes=393216	lpid=1064	cpid=1724	nattch=2
+att_time=Tue Apr 12 16:24:14 2011  
+det_time=Not set                   
+change_time=Tue Apr 12 16:24:14 2011  
+
+Creator:
+  PID TTY      STAT   TIME COMMAND
+ 1724 ?        Sl     1:14 /usr/lib/gnome-panel/wnck-applet --oaf-activate-iid=OAFIID:GNOME_Wncklet_Factory --oaf-ior-fd=22
+Last Accesser:
+  PID TTY      STAT   TIME COMMAND
+ 1064 tty8     Rs+   17:53 /usr/bin/X :1 -br -verbose -auth /var/run/gdm/auth-for-gdm-aDVJgc/database -nolisten tcp
+
+----------------------------------------------------------------------------------------------------
+
+#ipcs -m -i 6881313
+
+Shared memory Segment shmid=6881313
+uid=1000	gid=1000	cuid=1000	cgid=1000
+mode=01600	access_perms=0600
+bytes=12288	lpid=1064	cpid=1724	nattch=2
+att_time=Tue Apr 12 16:24:14 2011  
+det_time=Not set                   
+change_time=Tue Apr 12 16:24:14 2011  
+
+Creator:
+  PID TTY      STAT   TIME COMMAND
+ 1724 ?        Sl     1:14 /usr/lib/gnome-panel/wnck-applet --oaf-activate-iid=OAFIID:GNOME_Wncklet_Factory --oaf-ior-fd=22
+Last Accesser:
+  PID TTY      STAT   TIME COMMAND
+ 1064 tty8     Ss+   17:53 /usr/bin/X :1 -br -verbose -auth /var/run/gdm/auth-for-gdm-aDVJgc/database -nolisten tcp
+
+----------------------------------------------------------------------------------------------------
+
+#ipcs -m -i 6914082
+
+Shared memory Segment shmid=6914082
+uid=1000	gid=1000	cuid=1000	cgid=1000
+mode=01600	access_perms=0600
+bytes=12288	lpid=1064	cpid=1322	nattch=2
+att_time=Tue Apr 12 16:24:14 2011  
+det_time=Not set                   
+change_time=Tue Apr 12 16:24:14 2011  
+
+Creator:
+  PID TTY      STAT   TIME COMMAND
+ 1322 ?        Sl     0:57 metacity
+Last Accesser:
+  PID TTY      STAT   TIME COMMAND
+ 1064 tty8     Ss+   17:53 /usr/bin/X :1 -br -verbose -auth /var/run/gdm/auth-for-gdm-aDVJgc/database -nolisten tcp
+
+----------------------------------------------------------------------------------------------------
+
+#ipcs -m -i 6946851
+
+Shared memory Segment shmid=6946851
+uid=1000	gid=1000	cuid=1000	cgid=1000
+mode=01600	access_perms=0600
+bytes=12288	lpid=1064	cpid=2204	nattch=2
+att_time=Tue Apr 12 16:24:14 2011  
+det_time=Not set                   
+change_time=Tue Apr 12 16:24:14 2011  
+
+Creator:
+  PID TTY      STAT   TIME COMMAND
+ 2204 ?        Sl     0:08 /usr/lib/notify-osd/notify-osd
+Last Accesser:
+  PID TTY      STAT   TIME COMMAND
+ 1064 tty8     Ss+   17:53 /usr/bin/X :1 -br -verbose -auth /var/run/gdm/auth-for-gdm-aDVJgc/database -nolisten tcp
+
+----------------------------------------------------------------------------------------------------
+
+#ipcs -m -i 8093732
+
+Shared memory Segment shmid=8093732
+uid=1000	gid=1000	cuid=1000	cgid=1000
+mode=01600	access_perms=0600
+bytes=393216	lpid=1064	cpid=8175	nattch=2
+att_time=Tue Apr 12 16:54:49 2011  
+det_time=Not set                   
+change_time=Tue Apr 12 16:54:49 2011  
+
+Creator:
+  PID TTY      STAT   TIME COMMAND
+ 8175 ?        Sl     1:08 skype
+Last Accesser:
+  PID TTY      STAT   TIME COMMAND
+ 1064 tty8     Ss+   17:53 /usr/bin/X :1 -br -verbose -auth /var/run/gdm/auth-for-gdm-aDVJgc/database -nolisten tcp
+
+----------------------------------------------------------------------------------------------------
+
+#ipcs -m -i 8192037
+
+Shared memory Segment shmid=8192037
+uid=1000	gid=1000	cuid=1000	cgid=1000
+mode=01600	access_perms=0600
+bytes=393216	lpid=1064	cpid=8317	nattch=2
+att_time=Tue Apr 12 17:01:39 2011  
+det_time=Not set                   
+change_time=Tue Apr 12 17:01:39 2011  
+
+Creator:
+  PID TTY      STAT   TIME COMMAND
+ 8317 ?        Sl     0:03 chmsee /media/Data/Academic/Operating System/Addison.Wesley,.Advanced.Programming.in.the.UNIX.Environment.(2005).2Ed.chm
+Last Accesser:
+  PID TTY      STAT   TIME COMMAND
+ 1064 tty8     Ss+   17:53 /usr/bin/X :1 -br -verbose -auth /var/run/gdm/auth-for-gdm-aDVJgc/database -nolisten tcp
+
+----------------------------------------------------------------------------------------------------
+
+#ipcs -m -i 8224806
+
+Shared memory Segment shmid=8224806
+uid=1000	gid=1000	cuid=1000	cgid=1000
+mode=01600	access_perms=0600
+bytes=393216	lpid=1064	cpid=8317	nattch=2
+att_time=Tue Apr 12 17:01:40 2011  
+det_time=Not set                   
+change_time=Tue Apr 12 17:01:40 2011  
+
+Creator:
+  PID TTY      STAT   TIME COMMAND
+ 8317 ?        Sl     0:03 chmsee /media/Data/Academic/Operating System/Addison.Wesley,.Advanced.Programming.in.the.UNIX.Environment.(2005).2Ed.chm
+Last Accesser:
+  PID TTY      STAT   TIME COMMAND
+ 1064 tty8     Ss+   17:53 /usr/bin/X :1 -br -verbose -auth /var/run/gdm/auth-for-gdm-aDVJgc/database -nolisten tcp
+
+----------------------------------------------------------------------------------------------------
+
+#ipcs -m -i 8257575
+
+Shared memory Segment shmid=8257575
+uid=1000	gid=1000	cuid=1000	cgid=1000
+mode=01600	access_perms=0600
+bytes=393216	lpid=1064	cpid=10180	nattch=2
+att_time=Tue Apr 12 17:38:22 2011  
+det_time=Not set                   
+change_time=Tue Apr 12 17:38:22 2011  
+
+Creator:
+  PID TTY      STAT   TIME COMMAND
+10180 ?        Sl     0:06 gedit /home/kempa/Desktop/vocabulary
+Last Accesser:
+  PID TTY      STAT   TIME COMMAND
+ 1064 tty8     Ss+   17:53 /usr/bin/X :1 -br -verbose -auth /var/run/gdm/auth-for-gdm-aDVJgc/database -nolisten tcp
+
+----------------------------------------------------------------------------------------------------
+
+#ipcs -m -i 8290344
+
+Shared memory Segment shmid=8290344
+uid=1000	gid=1000	cuid=1000	cgid=1000
+mode=01600	access_perms=0600
+bytes=393216	lpid=1064	cpid=10180	nattch=2
+att_time=Tue Apr 12 17:38:22 2011  
+det_time=Not set                   
+change_time=Tue Apr 12 17:38:22 2011  
+
+Creator:
+  PID TTY      STAT   TIME COMMAND
+10180 ?        Sl     0:06 gedit /home/kempa/Desktop/vocabulary
+Last Accesser:
+  PID TTY      STAT   TIME COMMAND
+ 1064 tty8     Ss+   17:53 /usr/bin/X :1 -br -verbose -auth /var/run/gdm/auth-for-gdm-aDVJgc/database -nolisten tcp
+
+----------------------------------------------------------------------------------------------------
+</verbatim>
+
+-- Main.AbhijithMadhav - 2011-04-12

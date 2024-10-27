@@ -1,9 +1,9 @@
 
-title: Another SE
+title: Software Engineering Notes
 email:
 description: >- # this means to ignore newlines until "baseurl:"
-  Documentation of software engineering journey
-twitter_username: madhavabhijith
+  Notes about computer science subjects made during my time as an engineering student and then as a software engineer
+
 github_username: abhijithmadhav
 minimal_mistakes_skin: default
 search: true
@@ -18,7 +18,7 @@ remote_theme: mmistakes/minimal-mistakes
 permalink: /:categories/:title/
 paginate: 5 # amount of posts to show
 paginate_path: /page:num/
-timezone: Asia/Kolkata # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone: Asia/Kolkata
 
 include:
   - _pages
@@ -48,7 +48,7 @@ plugins:
 author:
   name   : "Abhijith Madhav"
   avatar : "/assets/images/bio-photo.jpg"
-  bio    : "TODO"
+  bio    : "TODO-bio"
   links:
     - label: "Website"
       icon: "fas fa-fw fa-link"
@@ -56,6 +56,9 @@ author:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/abhijithmadhav"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/abhijith-madhav/"
 
 footer:
   links:
@@ -68,9 +71,6 @@ footer:
 
 collections_dir: my_collections
 collections:
-  operating-system:
-    output: true
-    permalink: /:collection/:path/
   distributed-systems:
     output: true
     permalink: /:collection/:path/
@@ -78,6 +78,9 @@ collections:
     output: true
     permalink: /:collection/:path/
   experiences:
+    output: true
+    permalink: /:collection/:path/
+  operating-system:
     output: true
     permalink: /:collection/:path/
 
@@ -100,6 +103,23 @@ defaults:
     values:
       layout: single
       author_profile: false
+      toc: true
+  # operating-system
+  - scope:
+      path: ""
+      type: operating-system
+    values:
+      layout: single
+      author_profile: false
+      toc: true
+  # chat-system
+  - scope:
+      path: ""
+      type: system-design
+    values:
+      layout: single
+      author_profile: false
+      toc: true
 
 
 category_archive:

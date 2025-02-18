@@ -18,7 +18,7 @@ Original creation date : Around 2010-2012
 
 ## Contents
 
--   [Processes](Processes)
+-   [Processes](/operating-systems/Processes)
     -   [Context Switching](Context%20Switching)
     -   [Threads](Threads)
     -   [CPU scheduling](Process%20Scheduling)

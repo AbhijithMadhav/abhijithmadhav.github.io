@@ -123,19 +123,19 @@ operations. Consequently, one could make better use of the
 computer’s resources by giving higher priority to I/O-bound programs and
 allow them to execute ahead of the CPU-bound programs.
 
-[**Scheduling algorithms**](../Scheduling%20algorithms.odt)
+[**Scheduling algorithms**](Scheduling%20algorithms)
 
 |                                                                                           |            |                            |            |                 |               |                                        |
 |-------------------------------------------------------------------------------------------|------------|----------------------------|------------|-----------------|---------------|----------------------------------------|
 |                                                                                           | Preemption | CPU and device utilization | Throughput | Turnaround time | Response time | Waiting time                           |
-| [FCFS](../Scheduling%20algorithms.odt#FCFS)                                               | No         | Low due to convoy effect   |            |                 | Bad           | High                                   |
-| [SJFS/SNCBS](../Scheduling%20algorithms.odt#SJFS)                                         | No         |                            |            |                 |               | Minimum                                |
+| [FCFS](Scheduling%20algorithms#FCFS)                                               | No         | Low due to convoy effect   |            |                 | Bad           | High                                   |
+| [SJFS/SNCBS](Scheduling%20algorithms#SJFS)                                         | No         |                            |            |                 |               | Minimum                                |
 | SRTFS                                                                                     |            |                            |            |                 |               |                                        |
-| [Priority scheduling](../Scheduling%20algorithms.odt#Priority)                            | Yes        |                            |            |                 |               |                                        |
-| [Round Robin](../Scheduling%20algorithms.odt#Round-robin)                                 | Yes        |                            |            |                 | Good          | High when there are multiple processes |
-| [Multilevel Q scheduling](../Scheduling%20algorithms.odt#Multilevel-Q)                    | Yes        |                            |            |                 |               |                                        |
-| [Multilevel Feedback Q Scheduling](../Scheduling%20algorithms.odt#Multilevel-Q-Feedback') | Yes        | Good                       |            |                 |               |                                        |
-| [Highest response ratio first](../Scheduling%20algorithms.odt#HRRF)                       |            |                            |            |                 |               |                                        |
+| [Priority scheduling](Scheduling%20algorithms#Priority)                            | Yes        |                            |            |                 |               |                                        |
+| [Round Robin](Scheduling%20algorithms#Round-robin)                                 | Yes        |                            |            |                 | Good          | High when there are multiple processes |
+| [Multilevel Q scheduling](Scheduling%20algorithms#Multilevel-Q)                    | Yes        |                            |            |                 |               |                                        |
+| [Multilevel Feedback Q Scheduling](Scheduling%20algorithms#Multilevel-Q-Feedback') | Yes        | Good                       |            |                 |               |                                        |
+| [Highest response ratio first](Scheduling%20algorithms#HRRF)                       |            |                            |            |                 |               |                                        |
 
 Scheduling issues involving threads
 

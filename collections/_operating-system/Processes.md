@@ -1,6 +1,5 @@
 ---
 title: Processes(Figure 1 and 2)
-permalink: /operating-system/Processes.md
 ---
 When will a process lose the CPU?
 

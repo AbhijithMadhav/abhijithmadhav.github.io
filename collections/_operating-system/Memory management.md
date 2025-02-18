@@ -4,9 +4,9 @@ title: Memory management
 Memory management schemes
 
 -   [Contiguous memory allocation
-    schemes](../Contiguous%20Memory%20Allocation%20Scheme)
+    schemes](Contiguous%20Memory%20Allocation%20Scheme)
 -   [Paging](../../Computer%20Organization%20and%20Architecture/Virtual%20Memory.odt)
--   [Segmentation](../Segmentation.odt)
+-   [Segmentation](Segmentation)
 
 Advantages of paging over contiguous memory allocations schemes
 

@@ -100,10 +100,8 @@ os-toc:
     url: /operating-system/
     children:
       - title: Processes
-        url: /operating-system/Processes.md
-        children:
-          - title: Context Switching
-            url: /operating-system/Context%20Switching.md
+        url: /operating-system/Processes
+      - title: TODO
 
 
 

@@ -3,9 +3,9 @@ title: Ride Hailing
 ---
 
 ## Building blocks
-- [Distributed locks](/distributed-systems/distributed-locks.md)
-- [Geospatial index](/distributed-systems/geospatial-index.md)
-- [Consistent hashing](/distributed-systems/consistent-hashing-router.md)
+- [Distributed locks](/distributed-systems/distributed-locks)
+- [Geospatial index](/distributed-systems/geospatial-index)
+- [Consistent hashing](/distributed-systems/consistent-hashing-router)
 
 
 ## Requirements
@@ -30,7 +30,7 @@ No connection setup and teardown is thus required for each ingestion request.
 Further communication during ride matching negotiation and the ride itself can be done over the same connection.
 
 ### Geospatial index
-All the location data would have to be stored in a [geospatial index](../building-blocks/geospatial-index.md) 
+All the location data would have to be stored in a [geospatial index](/misc/geospatial-index) 
 for later ride matching. 
 Densely populated areas will have more cabs and hence a lot more location requests.
 The index will have to be partitioned according to this distribution pattern to ensure uniformity in load handling.

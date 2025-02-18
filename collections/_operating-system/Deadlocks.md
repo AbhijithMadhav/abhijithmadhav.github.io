@@ -82,13 +82,13 @@ Yes
 
 Methods for handling deadlocks
 
--   [Deadlock prevention](../Deadlock%20Prevention.odt)
+-   [Deadlock prevention](Deadlock%20Prevention)
 
     Prevent deadlocks by restraining how requests are made. These
     restraints ensure that at least one of the necessary conditions for
     deadlock does not hold.
 
--   [Deadlock avoidance](../Deadlock%20Avoidance.odt)
+-   [Deadlock avoidance](Deadlock%20Avoidance)
 
     Avoid deadlock by having the operating system moderate requests.
     Operating system is given advance additional information concerning
@@ -96,9 +96,9 @@ Methods for handling deadlocks
     this additional knowledge, it can decide whether a request can be
     granted or should wait when a process makes one.
 
--   [Deadlock ](../Deadlock%20detection%20and%20recovery.odt)[detection
+-   [Deadlock ](Deadlock%20detection%20and%20recovery)[detection
     and
-    ](../Deadlock%20detection%20and%20recovery.odt)[recovery](../Deadlock%20detection%20and%20recovery.odt)
+    ](Deadlock%20detection%20and%20recovery)[recovery](Deadlock%20detection%20and%20recovery)
 
     System uses an algorithm to detect a deadlock and then recovers from
     it.

@@ -33,19 +33,19 @@ Logical drives
 An equivalent terminology for volumes in Windows
 
 [Important data structures of a file
-system](../Important%20data%20structures%20of%20a%20file%20system.odt)
+system](Important%20data%20structures%20of%20a%20file%20system)
 
 -   On-disk file system data structures
 
     -   [Boot Control
-        Block](../Important%20data%20structures%20of%20a%20file%20system.odt#Boot%20Control%20Block)
+        Block](Important%20data%20structures%20of%20a%20file%20system#Boot%20Control%20Block)
     -   [Volume Control
-        Block](../Important%20data%20structures%20of%20a%20file%20system.odt#Volume%20Control%20Block)
+        Block](Important%20data%20structures%20of%20a%20file%20system#Volume%20Control%20Block)
     -   [Directory
-        Structures](../Important%20data%20structures%20of%20a%20file%20system.odt#Directory%20Structures)
-    -   [File](../Important%20data%20structures%20of%20a%20file%20system.odt#File)[
+        Structures](Important%20data%20structures%20of%20a%20file%20system#Directory%20Structures)
+    -   [File](Important%20data%20structures%20of%20a%20file%20system#File)[
         Control
-        Block](../Important%20data%20structures%20of%20a%20file%20system.odt#FCB)
+        Block](Important%20data%20structures%20of%20a%20file%20system#FCB)
 
 -   In-memory file system data structures
 
@@ -53,14 +53,14 @@ system](../Important%20data%20structures%20of%20a%20file%20system.odt)
     performance via caching
 
     -   [Mount
-        Table](../Important%20data%20structures%20of%20a%20file%20system.odt#Mount%20Table)
+        Table](Important%20data%20structures%20of%20a%20file%20system#Mount%20Table)
     -   [Directory-Structure
-        Cache](../Important%20data%20structures%20of%20a%20file%20system.odt#%23Directory-Structure%20Cache)
+        Cache](Important%20data%20structures%20of%20a%20file%20system#%23Directory-Structure%20Cache)
     -   [System-wide open-file
-        table](../Important%20data%20structures%20of%20a%20file%20system.odt#%23System-wide%20open-file%20table)
+        table](Important%20data%20structures%20of%20a%20file%20system#%23System-wide%20open-file%20table)
     -   [Per-process open-file
-        table](../Important%20data%20structures%20of%20a%20file%20system.odt#%23Per-process%20open-file%20table)
-    -   [Buffers](../Important%20data%20structures%20of%20a%20file%20system.odt#%23Buffers)
+        table](Important%20data%20structures%20of%20a%20file%20system#%23Per-process%20open-file%20table)
+    -   [Buffers](Important%20data%20structures%20of%20a%20file%20system#%23Buffers)
 
 Through the layers
 

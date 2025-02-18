@@ -94,4 +94,4 @@ Implementations of lock primitives
 
     -   Disadvantages
 
-        -   [Priority inversion](../Semaphores.odt#Priority%20inversion)
+        -   [Priority inversion](../Semaphores#Priority%20inversion)

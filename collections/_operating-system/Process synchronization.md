@@ -68,14 +68,14 @@ How can race condition be avoided?(Figure 26)
 By ensuring that only one process executes at a time in a **common**
 critical region. This can be achieved by the use of
 
--   [Lo](../Locks.odt)[c](../Locks.odt)[ks](../Locks.odt)
+-   [Lo](Locks)[c](Locks)[ks](Locks)
 
 <!-- -->
 
 -   [Using Hardware-atomic-primitives
-    directly](../Atomic%20hardware-primitives%20for%20synchronization.odt)
--   [Semaphores](../Semaphores.odt)
--   [Monitors](../Monitors.odt) - Typically implemented using semaphores
+    directly](Atomic%20hardware-primitives%20for%20synchronization)
+-   [Semaphores](Semaphores)
+-   [Monitors](Monitors) - Typically implemented using semaphores
 -   **An application specific software solution** using only atomic
     loads and stores(Think Too much milk solution)
 

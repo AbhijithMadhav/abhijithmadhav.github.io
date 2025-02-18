@@ -7,7 +7,7 @@ Basic file-system algorithms
     allocation scheme
 
     In a [variation of the linked-list-allocation
-    scheme](../File%20Allocation%20Methods.odt#Clustering), a cluster of
+    scheme](File%20Allocation%20Methods#Clustering), a cluster of
     blocks is allocated instead of a single block which results in a
     internal fragmentation. To reduce this, BSD Unix varies the cluster
     size as a file grows.

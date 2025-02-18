@@ -1,4 +1,4 @@
 #! /bin/bash
 
-bundle exec jekyll serve --livereload
-#bundle exec jekyll serve --livereload --verbose
+bundle exec jekyll serve --livereload --drafts
+#bundle exec jekyll serve --livereload --drafts --verbose

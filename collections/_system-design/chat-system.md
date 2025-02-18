@@ -1,12 +1,5 @@
 ---
-title: Chat messaging system
-categories:
-  - real-world-system
-tags:
-  - ws
-  - consistent-hashing
-  - cassandra
-  - thundering-herd
+title: Messaging system
 ---
 
 A ‘Chat messaging system’ is something like WhatsApp which enables users to communicate. The communication can be via text messages, photos, videos, audio calls or video calls. Focus here is on communication via text messages

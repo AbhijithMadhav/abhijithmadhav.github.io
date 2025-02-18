@@ -41,13 +41,13 @@ If user-id was used as the sole primary key the data distribution would not be u
 
 Timestamp should be used as the clustering key. This will result in the tweets being timestamp-sorted. If the tweets of a user spread across a partition they may have to be merge sorted.
 
-|||
-|-|-|
-|post_id(primary and partitioning key)|uuid
-|user_id|uuid
-|media_id|uuid
-|post_content|varchar
-|post_timestamp(sorting key)|timestamp
+|                                       |           |
+|---------------------------------------|-----------|
+| post_id(primary and partitioning key) | uuid      |
+| user_id                               | uuid      |
+| media_id                              | uuid      |
+| post_content                          | varchar   |
+| post_timestamp(sorting key)           | timestamp |
 
 ![user-timeline](../../assets/images/user-timeline.drawio.svg)
 

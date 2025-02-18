@@ -1,8 +1,9 @@
 ---
 title: Notes based on experience
-layout: collection
 permalink: /experiences/
-collection: experiences
 classes: wide
+toc: false
 author_profile: false
+sidebar:
+  nav: "experiences-toc"
 ---

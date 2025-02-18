@@ -1,10 +1,11 @@
 ---
 title: Distributed systems
-layout: collection
 permalink: /distributed-systems/
-collection: distributed-systems
 classes: wide
 author_profile: false
+sidebar:
+  nav: "ds-toc"
+toc: false
 ---
 
 ![Why?](../assets/images/distributed-systems.svg)

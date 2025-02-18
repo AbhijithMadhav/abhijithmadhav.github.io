@@ -31,7 +31,7 @@ The matching service also should be correct. The same player should not be assig
 Using a database to store the match requests and then trying to find matches is tricky from a correctness perspective. 
 Will have to use locks(select for update) on match requests which might not be performant.
 
-By using a streaming constructs, we can pipe matchable requests into the same window as illustrated in the diagram. 
+By using streaming constructs, we can pipe matchable requests into the same window as illustrated in the diagram. 
 Since the execution within a window is single-threaded matches can be found safely and elegantly.
 
 ![streaming-matching](../../assets/images/streaming-matching.svg)
@@ -59,7 +59,7 @@ The server then communicates with the client of the opposing player to propagate
 This pattern of communications lends itself to the use of websockets.
 
 The game service maintains all information about the game in a db. 
-The Predominant operation is a write of moves. 
+The predominant operation is a write of moves. 
 So a db designed for fast writes like cassandra(leaderless writes) can be used.  
 The table can be partitioned by game id so that write parallelism is at the level of each game.
 

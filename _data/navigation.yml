@@ -1,16 +1,10 @@
 main:
   - title: "About"
     url: /about/
-  - title: "Posts"
-    url: /posts/
   - title: "Notes"
     url: /notes/
-  - title: "Categories"
-    url: /categories/
-  - title: "Tags"
-    url: /tags/
 
-notes-toc:
+experiences-toc:
   - title: Experiences
     url: /experiences/
     children:
@@ -24,6 +18,7 @@ notes-toc:
       - title: AWS Athena
         url: /experiences/aws-athena/
 
+rws-toc:
   - title: Real world systems
     url: /system-design/
     children:
@@ -52,7 +47,21 @@ notes-toc:
       - title: Web Crawler
         url: /system-design/web-crawler/
 
-  - title: Distributed Systems
+misc-toc:
+  - title: Misc
+    url: /misc/
+    children:
+      - title: B-trees
+        url: /misc/b-tree
+      - title: Geospatial Index
+        url: /misc/geospatial-index/
+      - title: LSM Trees
+        url: /misc/lsm-tree/
+      - title: Transaction Isolation levels
+        url: ../../assets/images/transaction-isolation-levels.png
+
+ds-toc:
+  - title:
     url: /distributed-systems/
     children:
       - title: Caching
@@ -86,17 +95,16 @@ notes-toc:
       - title: Unique id Generator
         url: /distributed-systems/unique-id-generator
 
-  - title: Misc
-    url: /misc/
-    children:
-      - title: B-trees
-        url: /misc/b-tree
-      - title: Geospatial Index
-        url: /misc/geospatial-index/
-      - title: LSM Trees
-        url: /misc/lsm-tree/
-      - title: Transaction Isolation levels
-        url: ../../assets/images/transaction-isolation-levels.png
-
+os-toc:
   - title: Operating System
-    url: /operating-system
+    url: /operating-system/
+    children:
+      - title: Processes
+        url: /operating-system/Processes.md
+        children:
+          - title: Context Switching
+            url: /operating-system/Context%20Switching.md
+
+
+
+

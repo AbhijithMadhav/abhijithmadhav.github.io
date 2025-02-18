@@ -23,6 +23,7 @@ timezone: Asia/Kolkata
 include:
   - _pages
 
+show_drafts: true
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
@@ -69,7 +70,7 @@ footer:
       icon: "fab fa-fw fa-github"
       url: "https://github.com/abhijithmadhav"
 
-collections_dir: my_collections
+collections_dir: collections
 collections:
   distributed-systems:
     output: true
@@ -108,8 +109,7 @@ defaults:
       layout: single
       author_profile: false
       toc: true
-      sidebar:
-        nav: "notes-toc"
+      toc_sticky: true
 
   # experiences
   - scope:
@@ -119,8 +119,7 @@ defaults:
       layout: single
       author_profile: false
       toc: true
-      sidebar:
-        nav: "notes-toc"
+      toc_sticky: true
 
   # system-design
   - scope:
@@ -130,30 +129,7 @@ defaults:
       layout: single
       author_profile: false
       toc: true
-      sidebar:
-        nav: "notes-toc"
-
-  # distributed systems
-  - scope:
-      path: ""
-      type: distributed-systems
-    values:
-      layout: single
-      author_profile: false
-      toc: true
-      sidebar:
-        nav: "notes-toc"
-
-  # operating-system
-  - scope:
-      path: ""
-      type: operating-system
-    values:
-      layout: single
-      author_profile: false
-      toc: true
-      sidebar:
-        nav: "notes-toc"
+      toc_sticky: true
 
   # misc
   - scope:
@@ -163,8 +139,7 @@ defaults:
       layout: single
       author_profile: false
       toc: true
-      sidebar:
-        nav: "notes-toc"
+      toc_sticky: true
 
 category_archive:
   type: liquid

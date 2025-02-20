@@ -1,8 +1,15 @@
 main:
+  - title: "Home"
+    url: /index.html
   - title: "About"
     url: /about/
-  - title: "Notes"
-    url: /notes/
+  - title: "Building Blocks"
+    url: /distributed-systems/
+  - title: "Real World Systems"
+    url: /system-design/
+  - title: "Experiences"
+    url: /experiences/
+
 
 experiences-toc:
   - title: Experiences
@@ -22,7 +29,7 @@ rws-toc:
   - title: Real world systems
     url: /system-design/
     children:
-      - title: Chat Application Or Messaging Service
+      - title: Messaging Service
         url: /system-design/chat-system/
       - title: Chess.com
         url: /system-design/chess.com/
@@ -48,17 +55,9 @@ rws-toc:
         url: /system-design/web-crawler/
 
 misc-toc:
-  - title: Misc
-    url: /misc/
-    children:
-      - title: B-trees
-        url: /misc/b-tree
-      - title: Geospatial Index
-        url: /misc/geospatial-index/
-      - title: LSM Trees
-        url: /misc/lsm-tree/
+
       - title: Transaction Isolation levels
-        url: ../../assets/images/transaction-isolation-levels.png
+        url: ../../assets/images/transaction-isolation-levels.md.png
 
 ds-toc:
   - title:
@@ -84,6 +83,8 @@ ds-toc:
         url: /distributed-systems/load-balancer
       - title: Messaging
         url: /distributed-systems/messaging
+      - title: Observability
+        url: /distributed-systems/observability
       - title: Replication
         url: ../../assets/images/Replication.png
       - title: Service Discovery
@@ -94,6 +95,11 @@ ds-toc:
         url: /distributed-systems/thundering-herds
       - title: Unique id Generator
         url: /distributed-systems/unique-id-generator
+      - title: Web servers
+        url: /distributed-systems/web-servers
+      - title: Web Sockets
+        url: /distributed-systems/web-sockets
+
 
 os-toc:
   - title: Operating System

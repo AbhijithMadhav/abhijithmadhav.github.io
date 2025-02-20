@@ -1,21 +1,24 @@
 ---
-title: Messaging system
+title: Chat application
+tags: [web-sockets]
 ---
 
-A ‘Chat messaging system’ is something like WhatsApp which enables users to communicate. The communication can be via text messages, photos, videos, audio calls or video calls. Focus here is on communication via text messages
+A ‘Chat application’ is something like WhatsApp which enables users to communicate.
+The communication can be via text messages, photos, videos, audio calls or video calls.
+Focus here is on communication via text messages
 
 ## Requirements
 ### Functional
-- Support 1:1 text messaging
-- Support group messaging
-- Chat history support
+- 1:1 text messaging
+- Group messaging
+- Chat history
 - Chat sync across multiple devices
 - Offline indicator for users
 
 ### Non-Functional
-- Support one billion users
+- Scale : A billion users
 - Usual suspects 
-  - Scalable 
+  - Easily scalable 
   - Available 
   - Durable
 
@@ -26,13 +29,9 @@ A ‘Chat messaging system’ is something like WhatsApp which enables users to 
 ### Crux: Chat service
 
 * Use a web-service(chat service) between two clients(sender and receiver) which will route the messages
-* Use websockets for communication between client and chat service
-  * Use of HTTP has two disadvantages
-    * Opening of a connection(which is costly) for every message
-    * Server needs to initiate a connection when sending a message to the recipient. HTTP is typically used by a client to initiate a single request-response style communication with the client
-  * Web sockets allow for bidirectional communication between client and server once a connection has been established
-  * Another alternative is client-polling, which is again not efficient
-* The chat messages will be stored in a database so that they can be delivered later to an offline client. The storage of chat is limited to that last 30 days off messages. This ensures a limit to the unbounded growth of storage
+* Use [websockets](/distributed-systems/web-sockets#chat-applications) for communication between client and chat service
+  * An alternative technique is client-polling, but is not efficient
+* The chat messages will be stored in a database so that they can be delivered later to an offline client. The storage of chat is limited to the last 30 days off messages. This ensures a limit to the unbounded growth of storage
 * Support for chat history will be the responsibility of the client itself. This can be done by using local storage on the client(like SQLite on mobile clients)
 * Sync across various clients
   * Maintaining message offset(or timestamp) for each client along with the text messages
@@ -122,7 +121,7 @@ A ‘Chat messaging system’ is something like WhatsApp which enables users to 
 * Read workload will be light as most read requests are going to be satisfied by the client using local storage once message delivery is done. Only read requests are going to be by out-of sync clients.
   * Access pattern : Given a chat and a message offset/timestamp list the subsequent messages after that
 * Write workload is going to be very high. One write per every message transmitted.(11 million RPS)
-  * Need a storage solution with fast writes. Cassandra is suitable for this.
+  * Need a storage solution with fast writes. [Cassandra] is suitable for this.
     * Leaderless writes means multiple nodes in the cluster can accept writes
     * With LSM based storage engine writes are going to be appended to a commit log initially. Writes to memtable and the storage happen asynchronously
 * Storage also needs to support efficient delete of older chat messages(older than 30 days)
@@ -136,7 +135,6 @@ A ‘Chat messaging system’ is something like WhatsApp which enables users to 
 | creation_timestamp | timestamp(clustering key with TTL of a 30 days) |
 | sender             | uuid                                            |
 | contents           | text                                            |
-
 * Include the month as a part of the primary key so that chat contents of a particular chat id can be deleted easily by just dropping that partition/row. ???
 * Using timestamp as a clustering key helps in automatic dropping of this partition
 * This avoids manual deletes by inserting tombstones which can be costly for the cluster

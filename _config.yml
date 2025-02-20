@@ -1,8 +1,7 @@
 
-title: Software Engineering Notes
+title: Learnings
 email:
-description: >- # this means to ignore newlines until "baseurl:"
-  Notes about computer science subjects made during my time as an engineering student and then as a software engineer
+description: Notes about computer science subjects made during my time as an engineering student and then as a software engineer
 
 github_username: abhijithmadhav
 minimal_mistakes_skin: default
@@ -49,11 +48,8 @@ plugins:
 author:
   name   : "Abhijith Madhav"
   avatar : "/assets/images/bio-photo.jpg"
-  bio    : "TODO-bio"
+  bio    : "Software Engineer"
   links:
-    - label: "Website"
-      icon: "fas fa-fw fa-link"
-      url: "https://abhijithmadhav.github.io"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/abhijithmadhav"
@@ -84,9 +80,6 @@ collections:
   operating-system:
     output: true
     permalink: /:collection/:path/
-  misc:
-    output: true
-    permalink: /:collection/:path/
 
 defaults:
   # _posts
@@ -96,10 +89,10 @@ defaults:
     values:
       layout: single
       author_profile: false
-      read_time: true
+      read_time: false
       comments: true
       share: false
-      related: false
+      related: true
 
   # _pages
   - scope:
@@ -135,6 +128,16 @@ defaults:
   - scope:
       path: ""
       type: misc
+    values:
+      layout: single
+      author_profile: false
+      toc: true
+      toc_sticky: true
+
+  # misc
+  - scope:
+      path: ""
+      type: distributed-systems
     values:
       layout: single
       author_profile: false

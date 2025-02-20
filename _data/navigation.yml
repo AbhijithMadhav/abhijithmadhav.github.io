@@ -9,7 +9,14 @@ main:
     url: /system-design/
   - title: "Experiences"
     url: /experiences/
-
+  - title: "Sitemap"
+    url: /sitemap/
+  - title: "Tags"
+    url: /tags
+  - title: "Categories"
+    url: /categories/
+  - title: "Archive"
+    url: /year-archive/
 
 experiences-toc:
   - title: Experiences
@@ -54,11 +61,6 @@ rws-toc:
       - title: Web Crawler
         url: /system-design/web-crawler/
 
-misc-toc:
-
-      - title: Transaction Isolation levels
-        url: ../../assets/images/transaction-isolation-levels.md.png
-
 ds-toc:
   - title:
     url: /distributed-systems/
@@ -99,7 +101,6 @@ ds-toc:
         url: /distributed-systems/web-servers
       - title: Web Sockets
         url: /distributed-systems/web-sockets
-
 
 os-toc:
   - title: Operating System

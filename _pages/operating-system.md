@@ -3,8 +3,6 @@ title: Operating System
 permalink: /operating-system/
 classes: wide
 author_profile: false
-sidebar:
-  nav: "os-toc"
 toc: false
 ---
 

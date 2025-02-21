@@ -7,6 +7,6 @@ entries_layout: grid
 classes: wide
 author_profile: false
 sidebar:
-  nav: "rws-toc"
+  # nav: "rws-toc"
 toc: false
 ---

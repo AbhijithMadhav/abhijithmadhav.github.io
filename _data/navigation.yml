@@ -7,8 +7,8 @@ main:
     url: /distributed-systems/
   - title: "Real World Systems"
     url: /system-design/
-  - title: "Experiences"
-    url: /experiences/
+  - title: "Databases"
+    url: /databases/
   - title: "Sitemap"
     url: /sitemap/
   - title: "Tags"
@@ -101,15 +101,3 @@ ds-toc:
         url: /distributed-systems/web-servers
       - title: Web Sockets
         url: /distributed-systems/web-sockets
-
-os-toc:
-  - title: Operating System
-    url: /operating-system/
-    children:
-      - title: Processes
-        url: /operating-system/Processes
-      - title: TODO
-
-
-
-

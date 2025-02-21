@@ -119,7 +119,7 @@ Focus here is on communication via text messages
 ### Chat service
 #### Workload considerations
 * Read workload will be light as most read requests are going to be satisfied by the client using local storage once message delivery is done. Only read requests are going to be by out-of sync clients.
-  * Access pattern : Given a chat and a message offset/timestamp list the subsequent messages after that
+  * Access pattern: Given a chat and a message offset/timestamp list the subsequent messages after that
 * Write workload is going to be very high. One write per every message transmitted.(11 million RPS)
   * Need a storage solution with fast writes. [Cassandra] is suitable for this.
     * Leaderless writes means multiple nodes in the cluster can accept writes

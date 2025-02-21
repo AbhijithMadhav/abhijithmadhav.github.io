@@ -1,9 +1,10 @@
 ---
+title: Messaging brokers
 ---
-# Asynchronous messaging
+# Asynchronous communication
 
 Messaging brokers help with asynchronous communication between components.
-They encourage a event-driven model of workflow execution which decouples components in a system.
+They encourage an event-driven model of workflow execution which decouples components in a system.
 This decoupling means that failure of one component does not affect the others.
 
 Expectations from messaging brokers
@@ -34,4 +35,5 @@ Leader elections are done via the Raft protocol.
 ## Operational difficulties
 Increasing partitions of existing topics
 Adding new brokers means migrating replicas and replica leaders
+Scaling for storage would mean adding compute too
 

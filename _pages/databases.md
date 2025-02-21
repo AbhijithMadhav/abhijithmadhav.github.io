@@ -1,8 +1,8 @@
 ---
-title: Building Blocks
+title: Databases
 layout: collection
-permalink: /distributed-systems/
-collection: distributed-systems
+permalink: /databases/
+collection: databases
 entries_layout: grid
 classes: wide
 author_profile: false

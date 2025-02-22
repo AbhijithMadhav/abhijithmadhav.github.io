@@ -1,8 +1,8 @@
 ---
-title: Notes based on production experience
+title: All things messaging and streaming
 layout: collection
-permalink: /experiences/
-collection: experiences
+permalink: /kafka/
+collection: kafka
 entries_layout: grid
 classes: wide
 toc: false

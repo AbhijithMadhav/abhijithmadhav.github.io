@@ -1,7 +1,7 @@
 ---
 title: Cassandra
+excerpt : TODO
 ---
-WIP
 
 # Data modeling
 - NoSQL

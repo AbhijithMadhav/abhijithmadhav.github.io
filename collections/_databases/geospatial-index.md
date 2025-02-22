@@ -1,5 +1,6 @@
 ---
 title: Geospatial indexes
+excerpt: How is Geospatial data stored?
 ---
 
 Location information consists of two dimensions. 

@@ -2,7 +2,7 @@
 
 Consists of 
 - Metrics collection and storage
-  - Typically via a [time-series database](time-series-database.md)
+  - Typically via a [time-series database](../_databases/time-series-database.md)
   - Prometheus, Graphite, InfluxDB
 - Application performance monitoring
   - NewRelic

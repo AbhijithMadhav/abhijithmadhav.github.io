@@ -1,9 +1,13 @@
 ---
 title: Operating System
 permalink: /operating-system/
+layout: collection
+collection: operating-system
+entries_layout: grid
 classes: wide
-author_profile: false
 toc: false
+author_profile: false
+sidebar:
 ---
 
 ## Reference

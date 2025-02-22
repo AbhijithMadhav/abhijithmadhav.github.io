@@ -11,26 +11,14 @@ main:
     url: /databases/
   - title: "Sitemap"
     url: /sitemap/
+  - title: "Operating Systems"
+    url: /operating-system/
   - title: "Tags"
     url: /tags
   - title: "Categories"
     url: /categories/
   - title: "Archive"
     url: /year-archive/
-
-experiences-toc:
-  - title: Experiences
-    url: /experiences/
-    children:
-      - title: Apache Kafka
-        url: /experiences/kafka/
-      - title: Kafka Streams
-      - title: Mongo DB
-      - title: Oracle DB
-      - title: Spring/Spring Boot
-      - title: Java
-      - title: AWS Athena
-        url: /experiences/aws-athena/
 
 rws-toc:
   - title: Real world systems
